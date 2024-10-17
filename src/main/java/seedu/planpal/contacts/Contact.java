@@ -39,6 +39,7 @@ public class Contact implements Editable, Storeable {
         if (categories.length == 1) {
             throw new IllegalCommandException();
         }
+        assert categories.length >= 2: "Illegal command executed in contact";
         for (int categoryIndex = 1; categoryIndex < categories.length; categoryIndex++) {
             processEditFunction(categories[categoryIndex]);
         }

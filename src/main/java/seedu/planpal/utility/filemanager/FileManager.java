@@ -1,8 +1,8 @@
 package seedu.planpal.utility.filemanager;
 
 import seedu.planpal.exceptions.PlanPalExceptions;
-import seedu.planpal.utility.Functions;
 import seedu.planpal.utility.Parser;
+import seedu.planpal.utility.Ui;
 
 
 import java.io.File;
@@ -23,7 +23,6 @@ import java.util.Scanner;
 public class FileManager<T> {
     private static final String ADD_COMMAND = "add";
     private String pathToStorage = "error/file.txt";
-
     /**
      * Constructs a FileManager for managing a specific type of file.
      * If the provided object implements {@link Storeable}, it will use
@@ -73,7 +72,7 @@ public class FileManager<T> {
                 writer.write("");
             }
         } catch (IOException e) {
-            Functions.print("Error saving data!");
+            Ui.print("Error saving data!");
         }
     }
 
@@ -98,7 +97,7 @@ public class FileManager<T> {
                 parser.processCommand(scanner.nextLine());
             }
         } catch (FileNotFoundException | PlanPalExceptions e){
-            Functions.print(e.getMessage());
+            Ui.print(e.getMessage());
         }
 
         System.setOut(out);

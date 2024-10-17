@@ -2,17 +2,24 @@ package seedu.planpal.contacts;
 
 import seedu.planpal.exceptions.EmptyDescriptionException;
 import seedu.planpal.exceptions.PlanPalExceptions;
-import seedu.planpal.utility.Functions;
+import seedu.planpal.utility.ListFunctions;
 import seedu.planpal.utility.filemanager.FileManager;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Manages the contact list within the PlanPal application.
  */
-public class ContactManager implements Functions<Contact> {
-
+public class ContactManager implements ListFunctions<Contact> {
+    private static final Logger CONTACT_LOGGER = Logger.getLogger(ContactManager.class.getName());
     FileManager<Contact> savedContacts = new FileManager<>(new Contact());
     private ArrayList<Contact> contactList = new ArrayList<>();
+
+
+    public ContactManager() {
+        CONTACT_LOGGER.setLevel(Level.SEVERE);
+    }
 
     public ArrayList<Contact> getContactList() {
         return contactList;
@@ -34,6 +41,7 @@ public class ContactManager implements Functions<Contact> {
             throw new EmptyDescriptionException();
         }
         addToList(contactList, new Contact(description));
+        CONTACT_LOGGER.info("Added contact");
         savedContacts.saveList(contactList);
     }
 

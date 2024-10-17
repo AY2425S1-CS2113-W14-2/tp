@@ -8,7 +8,7 @@ import seedu.planpal.exceptions.PlanPalExceptions;
 /**
  * Parses user input and executes commands within the PlanPal application.
  */
-public class Parser implements Functions<String>{
+public class Parser implements ListFunctions<String> {
 
     private static final String ADD_COMMAND = "add";
     private static final String DELETE_COMMAND = "delete";
