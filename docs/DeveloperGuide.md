@@ -79,3 +79,24 @@ Click on `PlanPal.jar` to automatically download the file. Place the file in a f
 ## Instructions for manual testing
 
 {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
+---
+## Adding Contact
+The `add` command allows users to add a contact with various categories
+
+### Usage:
+```
+add /<category 1>: <value 1> /<category 2>: <value 2> /<category 3>: <value 3> ... 
+```
+### Example:
+```
+add /name: johnny
+```
+### Expected Output:
+```
+_________________________________________________________
+Added successfully!
+_________________________________________________________
+```
+
+---
+

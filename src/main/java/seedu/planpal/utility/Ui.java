@@ -43,6 +43,7 @@ public class Ui {
                 "Currently, I am able to manage the following:",
                 "   1. Contacts",
                 "   2. Expenses",
+                "   3. Activities",
                 "What would you like me to manage?",
                 "To select, type in the index! (Eg. To manage Contacts, type 1)"
         );
